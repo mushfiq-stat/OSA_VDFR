@@ -2,6 +2,12 @@
 
 R code for a variable-domain functional regression (VDFR) analysis of the apnea-hypopnea index (AHI) and log(AHI) on the durations of sleep-stage bouts. A bout is a run of consecutive 30-second epochs in the same stage.
 
+This code accompanies the paper:
+
+> Rahman MM, Guha Niyogi P. Association between stage-specific sleep bout durations and obstructive sleep apnea severity: A variable-domain functional regression approach. *medRxiv* (preprint), 2026. DOI: [10.64898/2026.07.14.26358060](https://doi.org/10.64898/2026.07.14.26358060)
+
+If you use this code, please cite the paper (see [Citation](#citation)).
+
 The project contains two scripts:
 
 | Script | What it does |
@@ -224,6 +230,8 @@ The coefficient-surface heat maps show β(t, T_i) on the triangle t ≤ T_i, whe
 
 ## Using the real data
 
+The paper uses baseline polysomnography from the Apnea Positive Pressure Long-term Efficacy Study (APPLES, n = 1,103). The de-identified data are available from the National Sleep Research Resource (NSRR) at <https://sleepdata.org> after a data-access request; they are not included in this project.
+
 `R/02_analysis.R` runs on real data without changes if `data/` holds files in the same format:
 
 - `data_5stage.rda`, `data_3stage.rda` and `data_2stage.rda`, with the object names and matrix columns described above;
@@ -236,3 +244,32 @@ The coefficient-surface heat maps show β(t, T_i) on the triangle t ≤ T_i, whe
 - Sleep is scored in 30-second epochs, so every bout length is a multiple of 30 seconds.
 - In the simulated data every recording starts and ends with W. Dropping the first and last W bout therefore removes exactly the wake before sleep onset and after final awakening.
 - Participants missing years of education are dropped from the models (about 2%), so a model's n can be smaller than its data set.
+
+---
+
+## Citation
+
+If you use this code, please cite:
+
+> Rahman MM, Guha Niyogi P. Association between stage-specific sleep bout durations and obstructive sleep apnea severity: A variable-domain functional regression approach. *medRxiv* (preprint), 2026.
+> DOI: [10.64898/2026.07.14.26358060](https://doi.org/10.64898/2026.07.14.26358060)
+
+BibTeX:
+
+```bibtex
+@article{rahman2026vdfr,
+  title   = {Association between stage-specific sleep bout durations and obstructive sleep apnea severity: A variable-domain functional regression approach},
+  author  = {Rahman, Md Mushfiqur and Guha Niyogi, Pratim},
+  journal = {medRxiv},
+  year    = {2026},
+  note    = {Preprint},
+  doi     = {10.64898/2026.07.14.26358060},
+  url     = {https://doi.org/10.64898/2026.07.14.26358060}
+}
+```
+
+The VDFR method implemented by `refund::lf.vd()` is described in:
+
+> Gellar JE, Colantuoni E, Needham DM, Crainiceanu CM. Variable-domain functional regression for modeling ICU data. *Journal of the American Statistical Association*. 2014;109(508):1425–1439. DOI: [10.1080/01621459.2014.940044](https://doi.org/10.1080/01621459.2014.940044)
+
+Users of the APPLES data should also follow the NSRR citation and acknowledgement requirements listed at <https://sleepdata.org>.

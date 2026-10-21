@@ -1,0 +1,5 @@
+Simulated data written by R/01_simulate_data.R
+scenario: fragmentation
+seed: 2026
+n: 100
+created: 2026-10-20 20:14:14.459237

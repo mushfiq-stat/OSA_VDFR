@@ -65,7 +65,7 @@ data_dir  <- file.path(project_dir, "data")
 epoch_dir <- file.path(data_dir, "epoch")
 
 scenario <- "fragmentation"   # "fragmentation" or "null"
-n_sim    <- 150            # participants (same as the real full sample)
+n_sim    <- 100            # participants (same as the real full sample)
 seed     <- 2026
 
 # Share of the variance of log(AHI) explained by the sleep term

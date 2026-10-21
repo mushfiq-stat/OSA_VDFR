@@ -142,7 +142,7 @@ The matrices are built the same way as the real ones. **The first bout is droppe
 | Setting | Default | Meaning |
 |---|---|---|
 | `scenario` | `"fragmentation"` | `"fragmentation"`: more fragmented sleepers have higher AHI, so the bout-duration models have a real signal to find. `"null"`: AHI is unrelated to sleep. |
-| `n_sim` | `1103` | Number of participants |
+| `n_sim` | `100` | Number of participants |
 | `seed` | `2026` | Random seed |
 | `signal_share` | `0.10` | Share of the variance of log(AHI) explained by the sleep term |
 | `bout_median`, `bout_sdlog` | per stage | Lognormal bout-length parameters, in epochs |
